@@ -30,6 +30,8 @@ public class GreetingServiceConfig {
     // Este bean é um POJO e tem propriedades que serão injectadas com valores que estão num ficheiro de propriedades
     // Exige a anotação @PropertySource no topo desta classe
     // @Value especifica o nome da propriedade a injectar
+    // A anotação @Value funciona bem mas é muito verbose e pode ser substituida pela injecção de um Bean de configuração
+    // Ex. FakeDataSource fakeDataSource(SfgConfiguration sfgConfiguration)
     @Bean
     FakeDataSource fakeDataSource(@Value("${guru.username}") String username,
                                   @Value("${guru.password}") String password,
