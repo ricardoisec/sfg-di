@@ -14,6 +14,9 @@ public class SfgConfiguration {
     private String password;
     private String jdbcUrl;
 
+    // O problema desta classe é ser um POJO tradicional com gets e sets o que torna o Bean mutável
+    // Os objectos de configuração devem ser imutáveis para evitar utilização maliciosa ou erros honestos do programador
+
     public String getUsername() {
         return username;
     }

@@ -10,6 +10,7 @@ import guru.springframework.sfgdi.services.qualifiersandprofiles.I18nEnglishGree
 import guru.springframework.sfgdi.services.qualifiersandprofiles.I18nSpanishGreetingService;
 import guru.springframework.sfgdi.services.qualifiersandprofiles.PrimaryGreetingService;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
@@ -17,13 +18,18 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Profile;
 import org.springframework.context.annotation.PropertySource;
 
+// Activa o suporte para a anotação @ConfigurationProperties, que deve estar presente nos Beans onde se pretenda usar Constructor Binding
+@EnableConfigurationProperties(SfgConstructorConfig.class)
+
 // A anotação @PropertySource indica um ou vários ficheiros de propriedades a serem mapeadas nos Beans
 // Tecnicamente estas propriedades são carregadas para o Context
 // Em Spring Boot existe uma anotação @PropertySource implícita para o ficheiro application.properties
 @PropertySource("classpath:datasources.properties")
+
 // A anotação @ImportResource 'activa' a configuração por XML do ficheiro sfgdi-config.xml
 // Esta anotação pode estar presente aqui ou no ficheiro da função 'main'
 @ImportResource("classpath:sfgdi-config.xml")
+
 @Configuration // marca esta classe como classe de configuração
 public class GreetingServiceConfig {
 
