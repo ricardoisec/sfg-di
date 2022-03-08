@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Esta configuração mostra como declarar um bean via XML -->
+    <!-- Este tipo de configuração está em desuso e opta-se cada vez mais pelas anotações, ex. @Service -->
+    <bean name="constructorGreetingService" class="guru.springframework.sfgdi.services.injectiontypes.ConstructorGreetingService"/>
+</beans>
