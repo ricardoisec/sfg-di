@@ -1,9 +1,27 @@
 # Apesar de possível, em projectos reais não se deve usar ficheiros .properties misturados com ficheiros .yml
 spring:
   profiles:
-    active: dog,EN,dev
+    # active: dog,EN,prod  -> esta sintaxe também funciona mas é mais difícil de ler e manter que uma YAML list
+    active:
+      - dog
+      - EN
+      - prod
 
 guru:
   username: YamlUserName
   password: YamlPassword
   jdbcUrl: YamlUrlForDB
+
+
+# Em YAML, 3 traços --- significam um "novo" documento
+# Da mesma forma, 3 pontos ... significam o fim do documento
+# Como este é um documento (virtual) novo, é possível fazer override a qualquer propriedade como se este fosse um
+# hipotético ficheiro application-prod.yml
+---
+spring:
+  profiles: prod
+
+guru:
+  username: YamlUserNameProd
+  password: YamlPasswordProd
+  jdbcUrl: YamlUrlForDBProd
