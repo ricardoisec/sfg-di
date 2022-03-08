@@ -6,6 +6,7 @@ import guru.springframework.sfgdi.controllers.MyController;
 import guru.springframework.sfgdi.controllers.PetController;
 import guru.springframework.sfgdi.controllers.PropertyInjectedController;
 import guru.springframework.sfgdi.controllers.SetterInjectedController;
+import guru.springframework.sfgdi.datasource.FakeDataSource;
 import guru.springframework.sfgdi.services.beanscope.PrototypeBean;
 import guru.springframework.sfgdi.services.beanscope.SingletonBean;
 import org.springframework.boot.SpringApplication;
@@ -59,6 +60,12 @@ public class SfgDiApplication {
         System.out.println("Prototype bean 1 scope: " + prototypeBean1.getMyScope());
         PrototypeBean prototypeBean2 = ctx.getBean(PrototypeBean.class);
         System.out.println("Prototype bean 2 scope: " + prototypeBean2.getMyScope());
+
+        System.out.println("------ Properties configuration");
+        FakeDataSource fakeDataSource = ctx.getBean(FakeDataSource.class);
+        System.out.println("Username: " + fakeDataSource.getUsername());
+        System.out.println("Password: " + fakeDataSource.getPassword());
+        System.out.println("URL: " + fakeDataSource.getJdbcUrl());
 
     }
 }
