@@ -1,0 +1,9 @@
+# Apesar de possível, em projectos reais não se deve usar ficheiros .properties misturados com ficheiros .yml
+spring:
+  profiles:
+    active: dog,EN,dev
+
+guru:
+  username: YamlUserName
+  password: YamlPassword
+  jdbcUrl: YamlUrlForDB
