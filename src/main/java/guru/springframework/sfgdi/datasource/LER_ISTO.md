@@ -6,7 +6,11 @@ Há várias maneiras de passar variáveis a uma aplicação Spring
 5) Ficheiros de propriedades (ficheiros .property ou YAML)
 
 As várias fontes de propriedades têm hierarquia, por ex:
-Argumentos de linha de comandos > variáveis de ambiente > ficheiros de propriedades
+    Argumentos de linha de comandos > 
+    Variáveis de ambiente > 
+    Ficheiros de propriedades de cada environment, ex. application-dev.properties >
+    Ficheiro de propriedades application.properties
+    
 
 Boas práticas:
 Propriedades normais devem estar em application.properties ou application.yaml no JAR ou WAR

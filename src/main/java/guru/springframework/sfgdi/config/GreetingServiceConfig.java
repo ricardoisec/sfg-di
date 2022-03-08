@@ -19,6 +19,7 @@ import org.springframework.context.annotation.PropertySource;
 
 // A anotação @PropertySource indica um ou vários ficheiros de propriedades a serem mapeadas nos Beans
 // Tecnicamente estas propriedades são carregadas para o Context
+// Em Spring Boot existe uma anotação @PropertySource implícita para o ficheiro application.properties
 @PropertySource("classpath:datasources.properties")
 // A anotação @ImportResource 'activa' a configuração por XML do ficheiro sfgdi-config.xml
 // Esta anotação pode estar presente aqui ou no ficheiro da função 'main'
